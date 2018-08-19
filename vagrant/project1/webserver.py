@@ -30,7 +30,12 @@ class WebServerHandler(BaseHTTPRequestHandler):
             output = "<html><body>"
             for employee in employees:
                 output += employee.name
-                output += "</br>"
+		output += "</br>"
+		output += "<a href='#'>Edit</a>"
+		output += "</br>"
+		output += "<a href='#'>Delete</a>"
+		output += "</br>"
+                
             output += "</body></html>"
 
             # write output into file

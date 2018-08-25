@@ -28,6 +28,9 @@ class WebServerHandler(BaseHTTPRequestHandler):
 
             # html output for front end(UI)
             output = "<html><body>"
+	    output += "<h4><a href='#'>Enter a new employee</a></h4>"
+	    output += "</br>"
+
             for employee in employees:
                 output += employee.name
 		output += "</br>"
@@ -41,6 +44,8 @@ class WebServerHandler(BaseHTTPRequestHandler):
             # write output into file
             self.wfile.write(output)
             return
+	
+		
         if self.path.endswith("/hello"):
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
